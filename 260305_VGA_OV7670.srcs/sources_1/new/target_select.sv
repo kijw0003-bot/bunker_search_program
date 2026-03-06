@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
-`include "define.h"
+`include "define.vh"
+
 module target_select (
     input  logic       clk,
     input  logic       reset,
@@ -85,33 +86,5 @@ module target_select (
             end
         end
     end
-    // ---------------------------------------------------------------------
-    // 상태 및 우선 순위 초기화
-    // always_ff @(posedge clk or posedge reset) begin
-    //     if (reset) begin
-    //         c_state <= IDLE;
-    //         c_index_count <= 0;
-    //     end else begin
-    //         c_state <= n_state;
-    //         c_index_count <= n_index_count;
-    //     end
-    // end
 
-    // always_comb begin
-    //     n_state = c_state;
-    //     n_index_count = c_index_count;
-    //     case (c_state)
-    //         IDLE: begin
-    //             if (frame_done) begin
-    //                 n_state = CALCULATE_TARGET;
-    //             end
-    //         end
-    //         CALCULATE_TARGET: begin
-
-    //         end
-    //         SEND_TARGET: begin
-
-    //         end
-    //     endcase
-    // end
 endmodule
