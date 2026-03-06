@@ -17,10 +17,9 @@ module frameBuffer (
         if (we) mem[wAddr] <= wData;
     end
 
-
     always_ff @(posedge rclk) begin
         rData <= mem[rAddr];
     end
-
+    // assign rData = mem[rAddr];
 
 endmodule

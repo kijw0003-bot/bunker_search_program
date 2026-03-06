@@ -48,6 +48,7 @@ module top_VGA_OV7670 (
         .y_pixel(y_pixel),
         .DE     (DE)
     );
+
     imgMemReader u_imgMemReader (
         .DE        (DE),
         .x_pixel   (x_pixel),
