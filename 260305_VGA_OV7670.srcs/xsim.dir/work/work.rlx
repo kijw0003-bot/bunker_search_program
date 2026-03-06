@@ -1,0 +1,10 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Xilinx/Vivado/2020.2/data/system_verilog/uvm_1.2/uvm_macros.svh,1605717275,systemVerilog,,d:/KJW/260305_VGA_OV7670/260305_VGA_OV7670.srcs/sources_1/new/top_VGA_OV7670.sv,,,,uvm,C:\Xilinx\Vivado\2020.2\data\system_verilog\uvm_1.2,,,,,
+d:/KJW/260305_VGA_OV7670/260305_VGA_OV7670.srcs/sources_1/imports/sources_1/imports/new/VGA_Decoder.sv,1772693165,systemVerilog,,,,VGA_Decoder;pclk_gen;pxl_counter;vga_decoder,,uvm,C:\Xilinx\Vivado\2020.2\data\system_verilog\uvm_1.2,,,,,
+d:/KJW/260305_VGA_OV7670/260305_VGA_OV7670.srcs/sources_1/imports/sources_1/new/imgMemReader.sv,1772620245,systemVerilog,,,,imgMemReader;imgMemReader_upscale,,uvm,C:\Xilinx\Vivado\2020.2\data\system_verilog\uvm_1.2,,,,,
+d:/KJW/260305_VGA_OV7670/260305_VGA_OV7670.srcs/sources_1/new/OV7670_MemController.sv,1772692212,systemVerilog,,,,OV7670_MemController,,uvm,C:\Xilinx\Vivado\2020.2\data\system_verilog\uvm_1.2,,,,,
+d:/KJW/260305_VGA_OV7670/260305_VGA_OV7670.srcs/sources_1/new/frameBuffer.sv,1772690895,systemVerilog,,,,frameBuffer,,uvm,C:\Xilinx\Vivado\2020.2\data\system_verilog\uvm_1.2,,,,,
+d:/KJW/260305_VGA_OV7670/260305_VGA_OV7670.srcs/sources_1/new/top_VGA_OV7670.sv,1772695835,systemVerilog,,,,top_VGA_OV7670,,uvm,C:\Xilinx\Vivado\2020.2\data\system_verilog\uvm_1.2,,,,,
