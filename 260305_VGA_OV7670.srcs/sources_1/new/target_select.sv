@@ -22,22 +22,31 @@ module target_select (
 
     // frame_done : 1 프레임 안에 있는 모든 모양, 색 위치를 파악 완료하면 1 tick 생성 후에 다시 0
     //              -> hint_count 를 저장 시작
+    typedef enum {
+        IDLE,
+        DECISION
+    } state_t;
+    state_t c_state, n_state;
+
+
     logic [7:0] c_data_mem[0:15];
     logic [7:0] n_data_mem[0:15];
 
-    logic [3:0] n_hint_count, c_hint_count;
+    logic [5:0] n_count_reg, c_count_reg;
 
     always_ff @(posedge clk or posedge reset) begin
         if (reset) begin
             for (int i = 0; i < 16; i++) begin
                 c_data_mem[i] <= 0;
             end
-            c_hint_count <= 0;
+            c_count_reg <= 0;
+            c_state <= IDLE;
         end else begin
             for (int i = 0; i < 16; i++) begin
                 c_data_mem[i] <= n_data_mem[i];
             end
-            c_hint_count <= n_hint_count;
+            c_count_reg <= n_count_reg;
+            c_state <= n_state;
         end
     end
 
@@ -45,8 +54,18 @@ module target_select (
         for (int i = 0; i < 16; i++) begin
             n_data_mem[i] = c_data_mem[i];
         end
-        n_hint_count = c_hint_count;
+        n_count_reg = c_count_reg;
+        case (c_state)
+            IDLE: begin
+                if (frame_done) begin
+                    n_state = DECISION;
+                    n_count_reg = hint_count;
+                end
+            end
+            DECISION: begin
 
+            end
+        endcase
     end
 
 
