@@ -1,0 +1,22 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    /* 저장 시 자동 포맷 */
+    "editor.formatOnSave": true,
+    /* SystemVerilog / Verilog 기본 Formatter 지정 */
+    "[systemverilog]": {
+        "editor.defaultFormatter": "bmpenuelas.systemverilog-formatter-vscode"
+    },
+    "[verilog]": {
+        "editor.defaultFormatter": "bmpenuelas.systemverilog-formatter-vscode"
+    },
+    /* Verible Formatter 경로 */
+    "systemverilogFormatter.path": "/home/aedu07/.vscode-server/extensions/bmpenuelas.systemverilog-formatter-vscode-3.4.1/verible_release/linux-static-x86_64.tar.gz/verible-v0.0-3969-g6a70680a/bin/verible-verilog-format",
+    /* Formatter 옵션 */
+    "systemverilogFormatter.commandLineArguments": "--column_limit 80 --indentation_spaces 4",
+    /* Lint 설정 */
+    "verilog.linting.linter": "xvlog",
+    /* Remote SSH */
+    "remote.SSH.remotePlatform": {
+        "10.10.15.20": "linux"
+    }
+}
