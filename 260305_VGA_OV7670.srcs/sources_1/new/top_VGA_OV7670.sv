@@ -14,7 +14,10 @@ module top_VGA_OV7670 (
     output logic       v_sync,
     output logic [3:0] port_red,
     output logic [3:0] port_green,
-    output logic [3:0] port_blue
+    output logic [3:0] port_blue,
+
+    // board -> borad Tx
+    output logic bd_tx
 );
     logic                       clk_100m;
     logic [                9:0] x_pixel;
@@ -26,6 +29,8 @@ module top_VGA_OV7670 (
     logic [$clog2(320*240)-1:0] wAddr;
     logic [               15:0] wData;
     logic [               15:0] rData;
+    logic w_tx_empty, w_tx_rdata;
+    logic [7:0] tx_fifo_mux_out;
 
     clk_wiz_0 instance_name (
         // Clock out ports
@@ -83,4 +88,43 @@ module top_VGA_OV7670 (
         .wData(wData)
     );
 
+
+
+    // ----------------------------------------------------
+    // ----------Board -> Board 출력 tx 부분----------------
+    // ----------------------------------------------------
+    mux_nx1 #(
+        .NUM  (2),
+        .WIDTH(8)
+    ) tx_fifo_src_mux (
+        .sel(),
+        .x  (),
+        .y  (tx_fifo_mux_out)
+    );
+
+    FIFO u_tx_fifo (
+        .clk  (clk),
+        .reset(reset),
+        .wr   (),
+        .rd   (~w_tx_busy),
+        .wdata(tx_fifo_mux_out),
+        .rdata(w_tx_rdata),
+        .full (),
+        .empty(w_tx_empty)
+    );
+
+    uart_tx #(
+        .BPS(9600)
+    ) u_uart_tx (
+        .clk     (clk),
+        .reset   (reset),
+        .tx_data (w_tx_rdata),
+        .tx_start(~w_tx_empty),
+        .tx      (bd_tx),
+        .tx_busy (w_tx_busy)
+    );
+
+    // ----------------------------------------------------
+    // ----------Board -> PC 출력 tx 부분-------------------
+    // ----------------------------------------------------
 endmodule
