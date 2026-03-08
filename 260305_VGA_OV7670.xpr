@@ -91,8 +91,45 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/new/VGA_Decoder.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../260304_VGA_Lenna/260304_VGA_Lenna.srcs/sources_1/imports/new/VGA_Decoder.sv"/>
+          <Attr Name="ImportTime" Val="1772598648"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/gray_scale_filter.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../260304_VGA_Lenna/260304_VGA_Lenna.srcs/sources_1/new/gray_scale_filter.sv"/>
+          <Attr Name="ImportTime" Val="1772623698"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/imgMemReader.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../260304_VGA_Lenna/260304_VGA_Lenna.srcs/sources_1/new/imgMemReader.sv"/>
+          <Attr Name="ImportTime" Val="1772620245"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/VGA_Img_Rom.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../260304_VGA_Lenna/260304_VGA_Lenna.srcs/sources_1/new/VGA_Img_Rom.sv"/>
+          <Attr Name="ImportTime" Val="1772623406"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/mux_nx1.sv">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -132,16 +169,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/new/VGA_Decoder.sv">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../260304_VGA_Lenna/260304_VGA_Lenna.srcs/sources_1/imports/new/VGA_Decoder.sv"/>
-          <Attr Name="ImportTime" Val="1772598648"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/frameBuffer.sv">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -150,39 +177,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/imgMemReader.sv">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../260304_VGA_Lenna/260304_VGA_Lenna.srcs/sources_1/new/imgMemReader.sv"/>
-          <Attr Name="ImportTime" Val="1772620245"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/top_VGA_OV7670.sv">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/gray_scale_filter.sv">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../260304_VGA_Lenna/260304_VGA_Lenna.srcs/sources_1/new/gray_scale_filter.sv"/>
-          <Attr Name="ImportTime" Val="1772623698"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/VGA_Img_Rom.sv">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../260304_VGA_Lenna/260304_VGA_Lenna.srcs/sources_1/new/VGA_Img_Rom.sv"/>
-          <Attr Name="ImportTime" Val="1772623406"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -221,7 +218,8 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="mux_nx1"/>
+        <Option Name="TopModule" Val="VGA_Img_Rom"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
